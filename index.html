@@ -1,124 +1,313 @@
-<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
-body {
-  font-family:'Helvetica';
-  letter-spacing:-5px;
-  background:#000;
-  background-size:100%;
-  color:#fff;
-  margin:0;
-  padding:0;
-  font-weight:bold;
+<!DOCTYPE html><html><head><title>A Turf.js Primer!</title><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<style>
+  .center {
+    text-align: center;
+  }
+  .quote {
+    font-family: serif;
+    letter-spacing: 2px;
+  }
+  .puppy {
+    background-image: url(./images/puppy.gif);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    background-size: 100%;
+    text-shadow: 3px 3px 5px #000;
+  }
+.iframe {
+  width: 100%;
+  height: 100%;
 }
 
-h1, h2, h3, p {
-  margin:0;
+.hiframe iframe {
+  position: absolute;
+  top: calc(0 - 200px);
+  
+    width: calc(100% + 1000px);
+    min-height: calc(100% + 800px);
 }
 
-em, a {
-  font-style:normal;
-  color:#8dbd0c;
-}
+.mapquest {
+    background-image: url(./images/2-Ridgefield-CT-Mapquest-out.jpg);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .old-google {
+    background-image: url(./images/3-old-google-maps-2.JPG);
+    background-repeat: no-repeat;
+    background-position: center 30px;
+  }
+  .slippy-map {
+    background-image: url(./images/slippy-map.gif);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-size: 100%;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .tile-loading {
+    background-image: url(./images/tiles-loading.gif);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-size: 100%;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .zoom0 {
+    background-image: url(./images/zoom0.png);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .geojson {
+    background-image: url(./images/geojson.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .init {
+    background-image: url(./images/init.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .mindblown {
+    background-image: url(./images/mindblown.gif);
+  }
+  .mapbox-github-public {
+    background-image: url(./images/mapbox-github-public.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .marker1 {
+    background-image: url(./images/marker1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .studio {
+    background-image: url(./images/studio.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .osm {
+    background-image: url(./images/osm.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .addtomap {
+    background-image: url(./images/addtomap.png);
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center 25px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+.stations {
+    background-image: url(./images/stations.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .turf {
+    background-image: url(./images/turf.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .marker2 {
+    background-image: url(./images/marker2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .taginfo {
+    background-image: url(./images/taginfo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .zoom1 {
+    background-image: url(./images/zoom1.png);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
+  .zoom2345 {
+    background-image: url(./images/zoom2-3-4-5.png);
+    background-repeat: no-repeat;
+    background-position: center 1px;
+    background-color: white;
+    text-shadow: 3px 3px 5px #222;
+  }
 
-a {
-  background:#34d0e7;
-  color:#000;
-  text-decoration:none;
-}
+</style>
+<script src='big.js'></script>
+</head><body>
 
-img {
-  width:100%;
-}
+<div>A head first <em>dive</em> into the <strong>Turf.js</strong> Library!<br>Justin Zimmerman<br><em>HRR9 2015</em></div>
+<div><strong>Fasten your seatbelts</strong>, this talk is a deep dive into<em>a very tiny</em>niche of web mapping.</div>
+<div><em>We'll see</em> how it goes.</div>
+<div>So <strong>my goal</strong> today is for you to <em>walk away</em> understanding a <strong>little</strong> about <em>Turf.js</em>...</div>
+<div>I <em>also</em> want to reinforce the idea that <strong>maps are hard</strong>...</div>
+<div>... but totally <em>worth it</em>.</div>
+<div>So let's start <em>there</em> with a <strong>cool</strong> web map. iframes are hard. Sorry in advance.</div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div>Let's talk about <strong>what's going on</strong> here.</div>
+<div><strong>"What is Turf.js?"</strong> you ask?</div>
+<div><strong>Turf.js</strong> is a <em>spatial analysis</em> library.</div>
+<div data-bodyclass='turf'></div>
 
-div {
-  cursor:pointer;
-  cursor:hand;
-  position:absolute;
-  top:0px;
-  left:0px;
-  padding:75px;
-  line-height:97%;
-}
 
-div.center {
-  text-align:center;
-}
+<div>That's a <strong>lot</strong> of things.</div>
+<div>And that's just <em>scratching the surface</em> of what <strong>Turf.js</strong> can do.</div>
+<div>Remember <strong>spatial problems</strong> are <em>everywhere</em></div>
+<div>So lets <strong>solve</strong>, <em>open source</em> tools we have to work on them, the <strong>better</strong>!</div>
+<div>Thanks!</div>
+<div><a href='https://twitter.com/zimmy130'>@zimmy130</a> | justin.richard.zimmerman@gmail.com</div>
 
-div.imageText {
-  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
-}
+<div>Vector tiles are <strong>similar</strong> to raster tiles...</div>
+<div>... but <em>instead</em> of creating <strong>tiled images</strong>, we create <em>tiled vector data</em> that can be <strong>styled</strong> in the browser.</div>
+<div>Roads, <strong>parks</strong>, <em>water bodies</em>, bike paths, <strong>points of interest</strong>, <em>state boundaries</em>...</div>
+<div>... all of this is <strong>vector data</strong> with <em>attributes</em> attached to it.</div>
+<div data-bodyclass='geojson'></div>
+<div>Vector tiles <em>store</em> all of this information, <strong>attributes</strong> included, as <em>protocol buffers</em>, or <em>PBF</em> files.</div>
+<div><strong>Protocol buffers</strong> are <em>super lightweight</em> and <em>compact</em>.</div>
+<div>So vector tiles are one of the <strong>super awesome</strong> <em>open source</em> components of web maps.</div>
+<div>They are the <strong>foundation</strong>.</div>
+<div>And <em>Mapbox.js</em> is what makes them <strong>possible</strong>!</div>
+<div>So back to our <em>example</em>...</div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div><strong>Where</strong> did these <em>map tiles</em> come from?</div>
+<div>They <em>seem</em> to be highlighting <strong>bike routes</strong>.</div>
+<div>(<em>Capital Bike Share stations</em> too, but these features are <strong>interactive</strong> and <em>not</em> part of the underlying style.)</div>
+<div>They're <em>quite</em> aesthetically pleasing!</div>
+<div><strong>These tiles</strong> were created with our <em>desktop design tool</em>, <a href='https://mapbox.com/mapbox-studio'>Mapbox Studio</a>.</div>
+<div data-bodyclass='studio'></div>
+<div>Using a <strong>styling language</strong> called <a href='https://github.com/mapbox/carto/blob/master/docs/latest.md'>CartoCSS</a>, you can <em>style</em> any <strong>vector data</strong> you wish.</div>
+<div>(It comes <em>pre-loaded</em> with <strong>three</strong> Mapbox-curated <a href='https://mapbox.com/developers/vector-tiles'>datasets</a> but you can <em>add your own</em> if you want.)</div>
+<div>From Mapbox Studio, you can <strong>upload a style</strong> to your account and <em>use it</em> in <strong>Mapbox.js</strong>, like in <em>this example</em>.</div>
+<div data-bodyclass='init'></div>
+<div>So when the <strong>map container</strong> on your page makes a <em>request</em> to <pre><span>GET</span></pre> the map tiles...</div>
+<div>... the <strong>custom style</strong> is being applied to the associated <em>vector tiles</em> to render <strong>tiled images</strong> in the container.</div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://api.tiles.mapbox.com/v4/duncangraham.b134a19e/page.html?access_token=pk.eyJ1IjoiZHVuY2FuZ3JhaGFtIiwiYSI6IlJJcWdFczQifQ.9HUpTV1es8IjaGAf_s64VQ#16/38.9106/-77.0367' frameborder='0' allowfullscreen></iframe></div>
+<div><em>Boom!</em> <strong>Tiles</strong> in a <em>map</em>!</div>
+<div><strong>Awesome.</strong> So <em>what else</em> is in this example?</div>
+<div>We have <strong>two markers</strong> that we can <em>move around</em>: the <strong>origin point</strong> and the <em>destination point</em>.</div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div data-bodyclass='marker1'></div>
+<div>In the code, we create a <strong>marker icon</strong> with the <a href='https://www.mapbox.com/mapbox.js/api/v2.2.1/l-mapbox-marker-icon/'>L.mapbox.marker.icon</a> constructor and add it to an <a href='https://www.mapbox.com/mapbox.js/api/v2.2.1/l-marker/'>L.marker</a> object.</div>
+<div>The <em>styling properties</em> for the icon come from <a href='https://mapbox.com/maki'>Maki</a>, an <strong>icon font</strong>, and the <a href='https://github.com/mapbox/simplestyle-spec'>Mapbox simplestyle-spec</a>.</div>
+<div>Pause. Are you <em>noticing a pattern</em>?</div>
+<div>This <strong>whole process</strong> is made up of <em>tiny</em>, <em>self-contained</em> components</div>
+<div data-bodyclass='mapbox-github-public'>many of them <strong>open source</strong></div>
+<div>that <em>work together</em> to build these <strong>seemingly simple</strong> mapping applications.</div>
+<div>Anyway.</div>
+<div>We also give the marker a <em>location</em> to draw itself and flag it as <strong>draggable</strong> so we can <em>change</em> the starting point of our trip.</div>
+<div>We then create a <strong>second marker</strong> that has a <em>different style</em> but is <strong>also draggable</strong>.</div>
+<div data-bodyclass='marker2'></div>
+<div>Then we add <em>both of them</em> to the map.</div>
+<div data-bodyclass='addtomap'></div>
+<div><strong>Sweet</strong>. We have a <em>map</em> with <strong>tiles</strong> and <em>two draggable markers</em>.</div>
+<div>What else?</div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div>When we <strong>move</strong> the markers, there are some <em>directions</em> that appear on the map.</div>
+<div>There are <em>walking directions</em> from the <strong>markers</strong> to the nearest <em>Capital Bike Share stations</em>...</div>
+<div>... and there are <strong>cycling directions</strong> between those stations.</div>
+<div>That's actually <strong>four separate things</strong> the map is doing.</div>
+<div>(Remember when I said <em>maps are hard</em>?)</div>
+<div>1. <strong>Adding</strong> the bike share stations to the map</div>
+<div>2. Locating the nearest station to each marker</div>
+<div>3. Generating walking directions between the markers and the stations</div>
+<div>4. Generating the bike directions between the stations</div>
+<div>The <strong>bike share stations</strong> are housed in a <em>GeoJSON</em> file.</div>
+<div><em>GeoJSON</em> is an extension of <a href="http://json.org">JSON</a>, which stands for <strong>JavaScript Object Notation</strong>.</div>
+<div>Because <em>GeoJSON</em> is just <strong>JavaScript</strong>, it can easily be used in <em>web maps</em>!</div>
+<div data-bodyclass='geojson'></div>
+<div>This example uses <a href='https://jquery.com'>jQuery</a> to <strong>load</strong> the GeoJSON and then <em>adds</em> them to the map with <pre><span>L.marker</span></pre> objects.</div>
+<div data-bodyclass='stations'></div>
+<div>Just to <em>digress</em> into one of the <strong>many</strong> silly nuances of <em>web mapping</em>...</div>
+<div><strong>Notice</strong> what's <em>going on</em> in this code with the <strong>latitude and longitude</strong> pair.</div>
+<div data-bodyclass='stations'></div>
+<div>There is <em>much disagreement</em> about whether <strong>coordinates</strong> should be written <pre><span>[lat, lon]</span></pre> or <pre><span>[lon, lat]</span></pre>.</div>
+<div><strong>GeoJSON</strong> prefers <pre><span>[lon, lat]</span></pre>, but <a href='https://leafletjs.com'>Leaflet</a> (and thus <em>Mapbox.js</em>) both prefer <pre><span>[lat, lon]</span></pre>.</div>
+<div>This is <strong>annoying</strong>.</div>
+<div data-bodyclass='puppy'>Moving on.</div>
+<div>Once the <strong>bike share locations</strong> are <em>added</em> to the map, we have to <strong>locate</strong> the <em>nearest one</em> to the <strong>start</strong> and <strong>end</strong> markers.</div>
+<div>To do this, we use <em>another</em> awesome <strong>open source</strong> library called <a href='http://turfjs.org'>Turf.js</a>.</div>
+<div data-bodyclass='turf'></div>
+<div><strong>Turf.js</strong> is a <em>spatial analysis</em> library.</div>
+<div><strong>Spatial analysis</strong> is used to <em>describe relationships</em> between <strong>geographic data</strong>.</div>
+<div><em>This example</em> uses the <a href='http://turfjs.org/static/docs/module-turf_nearest.html'>turf-nearest</a> function to find the <strong>nearest</strong> station to the markers.</div>
+<div>This operation happens <em>dynamically</em> <strong>every time</strong> the markers are dragged.</div>
+<div>And it's like, <strong>super hella fast</strong>!</div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div>So that leaves our <em>last</em> little <strong>open source</strong> component: the <a href='https://mapbox.com/developers/api/directions/'>Mapbox Directions API</a>!</div>
+<div>Routing is <strong>kinda complicated</strong> to implement but <em>actually quite straightforward</em> in theory.</div>
+<div><strong>Every path</strong> (road, trail, etc.) has a <em>bunch</em> of attributes.</div>
+<div>Like <strong>speed limit</strong>, <em>grade</em>, bike lanes, <strong>length</strong>...</div>
+<div>Each of these <strong>attributes</strong> has has a <em>cost</em> associated with it.</div>
+<div>The role of the <strong>routing algorithm</strong> is to find the <em>lowest cost path</em> from <strong>point A</strong> to <strong>point B</strong>.</div>
+<div>That means <em>costs</em> are assigned based on the <strong>goal</strong> of the routing.</div>
+<div>Not just <em>shortest distance</em>, but also <strong>faster roads</strong>.</div>
+<div><em>Walking</em> directions? Roads with <strong>sidewalks</strong> are less costly.</div>
+<div>Where do these <em>attributes</em> come from?</div>
+<div>The <strong>Mapbox Directions API</strong> is built on top of the <em>Open Source Routing Machine (OSRM)</em>, an <strong>open source</strong> project built on top of <a href='https://osm.org'>OpenStreetMap</a>.</div>
+<div><em>OpenStreetMap</em> is a <strong>crowd-sourced</strong> map of the world -- a <em>huge</em> dataset full of <strong>interesting</strong> things.</div>
+<div data-bodyclass='osm'></div>
+<div>It is also a <em>pretty comprehensive</em> resource of <strong>road data</strong>.</div>
+<div><em>OpenStreetMap</em> features are defined by <strong>tags</strong>.</div>
+<div data-bodyclass='taginfo'></div>
+<div>The <em>Directions API routing algorithms</em> assign <strong>costs</strong> to each <em>tag</em>.</div>
+<div>Boom! <strong>Bike directions</strong>!</div>
+<div>So the <em>open source project tally</em> right now stands at:</div>
+<div>Mapbox.js, <em>Turf.js</em>, <strong>OSRM</strong>, vector tiles, <em>GeoJSON</em>...</div>
+<div>That's it, right?</div>
+<div>Nope! <em>One more!</em></div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div data-bodyclass='mindblown'></div>
+<div>So <strong>what's going on</strong> here?</div>
+<div>This is the <a href='https://mapbox.com/developers/api/surface'>Mapbox Surface API</a>. It's for <em>inspectng vector data</em>.</div>
+<div>In <strong>this example</strong>, we hit the API along an <em>array of points</em> of the <strong>calculated bike route</strong>...</div>
+<div>... and we hit against a <strong>vector terrain</strong> dataest that is <em>pre-curated</em> by Mapbox, <a href='https://mapbox.com/developers/vector-tiles'>Mapbox Terrain</a>.</div>
+<div>The <strong>Surface API</strong> returns <em>elevation</em> data from the <strong>Mapbox Terrain</strong> dataset.</div>
+<div>Then the <em>percent grade</em> along the route is <strong>calculated</strong> and <strong>displayed</strong> on the map.</div>
+<div><em>No more surprises.</em> That's the whole map.</div>
+<div>So, <strong>concisely</strong>, what does it do?</div>
+<div>- Displays <em>vector tiles</em> with <strong>bike routes</strong></div>
+<div>- <strong>Pans</strong> and <em>zooms</em></div>
+<div>- Shows the <strong>Capital Bike Share</strong> stations</div>
+<div>- Has <em>draggable markers</em> for <strong>origin</strong> and <strong>destination</strong></div>
+<div>- Finds closest <em>bike share station</em> to <strong>origin</strong> and <strong>destination</strong></div>
+<div>- Shows <em>walking directions</em> to/from bike share stations</div>
+<div>- Shows a <strong>bike route</strong> between bike stations</div>
+<div>- Shows <em>elevation</em> and <strong>percent grade change</strong> along the bike route</div>
 
-notes {
-    display:none;
-}
-/* normally not good, but ok in context of full screen directional navigation */
-:focus {
-    outline: 0;
-}
 
-</style><script type='text/javascript'>
-window.onload = function() {
-    var s = document.getElementsByTagName('div'), ti, i;
-    for (i = 0; i < s.length; i++) s[i].setAttribute('tabindex', 0);
-    if (!s) return;
-    var big = { current: 0, forward: fwd, reverse: rev, go: go, length: s.length };
-    window.big = big;
-    function resize() {
-        var w = window.innerWidth, h = window.innerHeight, e = s[big.current];
-        e.style.fontSize = h + 'px';
-        for (i = h - 2; i > 0 && (e.offsetWidth > w || e.offsetHeight > h); i -= 2) {
-            e.style.fontSize = i + 'px';
-        }
-        e.style.marginTop = (h - e.offsetHeight) / 2 + 'px';
-    }
-    function go(n) {
-        big.current = n;
-        var e = s[n], t = parseInt(e.getAttribute('data-timeToNext') || 0, 10),
-            notes = e.getElementsByTagName('notes');
-        document.body.className = e.getAttribute('data-bodyclass') || '';
-        for (i = 0; i < s.length; i++) s[i].style.display = 'none';
-        e.style.display = 'inline';
-        e.focus();
-        for (i = 0; typeof console === 'object' && i < notes.length; i++) console.log('%c%s: %s', 'padding:5px;font-family:serif;font-size:18px;line-height:150%;', n, notes[i].innerHTML.trim());
-        if (e.firstChild && e.firstChild.nodeName === 'IMG') {
-            document.body.style.backgroundImage = 'url("' + e.firstChild.src + '")';
-            e.firstChild.style.display = 'none';
-            if ('classList' in e) e.classList.add('imageText');
-        } else {
-            document.body.style.backgroundImage = '';
-            document.body.style.backgroundColor = e.style.backgroundColor;
-        }
-        if (ti !== undefined) window.clearInterval(ti);
-        if (t > 0) ti = window.setTimeout(fwd, t * 1000);
-        resize();
-        if (window.location.hash !== n) window.location.hash = n;
-        document.title = e.textContent || e.innerText;
-    }
-    document.onclick = function() { go(++big.current % s.length); };
-    function fwd() { go(Math.min(s.length - 1, ++big.current)); }
-    function rev() { go(Math.max(0, --big.current)); }
-    document.onkeydown = function(e) {
-        if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
-        if (e.which === 37 || e.which === 33 || e.which === 38) rev();
-    };
-    document.ontouchstart = function(e) {
-        var x0 = e.changedTouches[0].pageX;
-        document.ontouchend = function(e2) {
-            var x1 = e2.changedTouches[0].pageX;
-            if (x1 - x0 < 0) fwd();
-            if (x1 - x0 > 0) rev();
-        };
-    };
-    function parse_hash() {
-        return Math.max(Math.min(s.length - 1,
-            parseInt(window.location.hash.substring(1), 10)), 0);
-    }
-    if (window.location.hash) big.current = parse_hash() || big.current;
-    window.onhashchange = function() {
-        i = parse_hash();
-        if (i !== big.current) go(i);
-    };
-    window.onresize = resize;
-    go(big.current);
-};
-</script></head><body>
-<div>welcome to <em>Big</em></div>
+</body>
+</html>
