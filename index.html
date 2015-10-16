@@ -177,12 +177,15 @@
 <div>I <em>also</em> want to reinforce the idea that <strong>maps are hard</strong>...</div>
 <div>... but totally <em>worth it</em>.</div>
 <div>So let's start <em>there</em> with a <strong>cool</strong> web map. iframes are hard. Sorry in advance.</div>
-<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://agile-hamlet-2097.herokuapp.com/' frameborder='0' allowfullscreen></iframe></div>
 <div>Let's talk about <strong>what's going on</strong> here.</div>
 <div><strong>"What is Turf.js?"</strong> you ask?</div>
 <div><strong>Turf.js</strong> is a <em>spatial analysis</em> library.</div>
 <div data-bodyclass='turf'></div>
-
+<div><em>This example</em> uses the <a href='http://turfjs.org/static/docs/module-turf_tin.html'>turf-tin</a> function to create the <strong>network</strong> of IP addresses.</div>
+<div>This operation happens <em>dynamically</em> <strong>every time</strong> someone views the page.</div>
+<div>And it's like, <strong>super fast</strong>!</div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://agile-hamlet-2097.herokuapp.com/' frameborder='0' allowfullscreen></iframe></div>
 
 <div>That's a <strong>lot</strong> of things.</div>
 <div>And that's just <em>scratching the surface</em> of what <strong>Turf.js</strong> can do.</div>
@@ -191,18 +194,8 @@
 <div>Thanks!</div>
 <div><a href='https://twitter.com/zimmy130'>@zimmy130</a> | justin.richard.zimmerman@gmail.com</div>
 
-<div>Vector tiles are <strong>similar</strong> to raster tiles...</div>
-<div>... but <em>instead</em> of creating <strong>tiled images</strong>, we create <em>tiled vector data</em> that can be <strong>styled</strong> in the browser.</div>
-<div>Roads, <strong>parks</strong>, <em>water bodies</em>, bike paths, <strong>points of interest</strong>, <em>state boundaries</em>...</div>
-<div>... all of this is <strong>vector data</strong> with <em>attributes</em> attached to it.</div>
-<div data-bodyclass='geojson'></div>
-<div>Vector tiles <em>store</em> all of this information, <strong>attributes</strong> included, as <em>protocol buffers</em>, or <em>PBF</em> files.</div>
-<div><strong>Protocol buffers</strong> are <em>super lightweight</em> and <em>compact</em>.</div>
-<div>So vector tiles are one of the <strong>super awesome</strong> <em>open source</em> components of web maps.</div>
-<div>They are the <strong>foundation</strong>.</div>
-<div>And <em>Mapbox.js</em> is what makes them <strong>possible</strong>!</div>
-<div>So back to our <em>example</em>...</div>
-<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://agile-hamlet-2097.herokuapp.com/' frameborder='0' allowfullscreen></iframe></div>
 <div><strong>Where</strong> did these <em>map tiles</em> come from?</div>
 <div>They <em>seem</em> to be highlighting <strong>bike routes</strong>.</div>
 <div>(<em>Capital Bike Share stations</em> too, but these features are <strong>interactive</strong> and <em>not</em> part of the underlying style.)</div>
@@ -219,7 +212,7 @@
 <div><em>Boom!</em> <strong>Tiles</strong> in a <em>map</em>!</div>
 <div><strong>Awesome.</strong> So <em>what else</em> is in this example?</div>
 <div>We have <strong>two markers</strong> that we can <em>move around</em>: the <strong>origin point</strong> and the <em>destination point</em>.</div>
-<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://agile-hamlet-2097.herokuapp.com/' frameborder='0' allowfullscreen></iframe></div>
 <div data-bodyclass='marker1'></div>
 <div>In the code, we create a <strong>marker icon</strong> with the <a href='https://www.mapbox.com/mapbox.js/api/v2.2.1/l-mapbox-marker-icon/'>L.mapbox.marker.icon</a> constructor and add it to an <a href='https://www.mapbox.com/mapbox.js/api/v2.2.1/l-marker/'>L.marker</a> object.</div>
 <div>The <em>styling properties</em> for the icon come from <a href='https://mapbox.com/maki'>Maki</a>, an <strong>icon font</strong>, and the <a href='https://github.com/mapbox/simplestyle-spec'>Mapbox simplestyle-spec</a>.</div>
@@ -235,7 +228,7 @@
 <div data-bodyclass='addtomap'></div>
 <div><strong>Sweet</strong>. We have a <em>map</em> with <strong>tiles</strong> and <em>two draggable markers</em>.</div>
 <div>What else?</div>
-<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://agile-hamlet-2097.herokuapp.com/' frameborder='0' allowfullscreen></iframe></div>
 <div>When we <strong>move</strong> the markers, there are some <em>directions</em> that appear on the map.</div>
 <div>There are <em>walking directions</em> from the <strong>markers</strong> to the nearest <em>Capital Bike Share stations</em>...</div>
 <div>... and there are <strong>cycling directions</strong> between those stations.</div>
@@ -266,7 +259,7 @@
 <div><em>This example</em> uses the <a href='http://turfjs.org/static/docs/module-turf_nearest.html'>turf-nearest</a> function to find the <strong>nearest</strong> station to the markers.</div>
 <div>This operation happens <em>dynamically</em> <strong>every time</strong> the markers are dragged.</div>
 <div>And it's like, <strong>super hella fast</strong>!</div>
-<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://agile-hamlet-2097.herokuapp.com/' frameborder='0' allowfullscreen></iframe></div>
 <div>So that leaves our <em>last</em> little <strong>open source</strong> component: the <a href='https://mapbox.com/developers/api/directions/'>Mapbox Directions API</a>!</div>
 <div>Routing is <strong>kinda complicated</strong> to implement but <em>actually quite straightforward</em> in theory.</div>
 <div><strong>Every path</strong> (road, trail, etc.) has a <em>bunch</em> of attributes.</div>
@@ -289,7 +282,7 @@
 <div>Mapbox.js, <em>Turf.js</em>, <strong>OSRM</strong>, vector tiles, <em>GeoJSON</em>...</div>
 <div>That's it, right?</div>
 <div>Nope! <em>One more!</em></div>
-<div data-bodyclass='hiframe'><iframe width='100%' src='https://www.mapbox.com/bites/00094/' frameborder='0' allowfullscreen></iframe></div>
+<div data-bodyclass='hiframe'><iframe width='100%' src='https://agile-hamlet-2097.herokuapp.com/' frameborder='0' allowfullscreen></iframe></div>
 <div data-bodyclass='mindblown'></div>
 <div>So <strong>what's going on</strong> here?</div>
 <div>This is the <a href='https://mapbox.com/developers/api/surface'>Mapbox Surface API</a>. It's for <em>inspectng vector data</em>.</div>
